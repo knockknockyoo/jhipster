@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 
 import { MainComponent } from 'app/layouts/main/main.component';
-import { JhipsterSampleTestModule } from '../../../test.module';
+import { AppTestModule } from '../../../test.module';
 import { MockRouter } from '../../../helpers/mock-route.service';
 
 describe('Component Tests', () => {
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [JhipsterSampleTestModule],
+        imports: [AppTestModule],
         declarations: [MainComponent],
         providers: [Title]
       })
@@ -35,7 +35,7 @@ describe('Component Tests', () => {
 
     describe('page title', () => {
       let routerState: any;
-      const defaultPageTitle = 'Jhipster_sample';
+      const defaultPageTitle = 'App';
       const parentRoutePageTitle = 'parentTitle';
       const childRoutePageTitle = 'childTitle';
       const navigationEnd = new NavigationEnd(1, '', '');

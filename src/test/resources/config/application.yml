@@ -17,15 +17,15 @@ eureka:
   client:
     enabled: false
   instance:
-    appname: jhipster_sample
-    instanceId: jhipster_sample:${spring.application.instance-id:${random.value}}
+    appname: app
+    instanceId: app:${spring.application.instance-id:${random.value}}
 
 spring:
   application:
-    name: jhipster_sample
+    name: app
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:jhipster_sample;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -49,11 +49,6 @@ spring:
       hibernate.generate_statistics: false
       hibernate.hbm2ddl.auto: validate
       hibernate.jdbc.time_zone: UTC
-  data:
-    elasticsearch:
-      properties:
-        path:
-          home: build/elasticsearch
   liquibase:
     contexts: test
   mail:
@@ -67,13 +62,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: jhipster-sample-task-
+      thread-name-prefix: app-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: jhipster-sample-scheduling-
+      thread-name-prefix: app-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -91,7 +86,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'jhipsterSampleApp'
+    name: 'appApp'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format
@@ -107,7 +102,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: MjIwMWZlNjI4ZGY4NjA5ZmEyYzg5MzIyMzE0NjgyYWJhNDRmM2ZiNWI3YzkxYWJiYWQ1MDJiZTYzNzAzYWU1MTEwM2I5NTNmY2M3ZWU4NTgzMzc5MzVkMzZlMDcyYjQ0ZDFkNzM5ZWMyYjVhZGZhYTc0OTE1MDAyMzM3NWYwMjQ=
+        base64-secret: ZmE0OWEwY2FlMzZmYjYyZDQ0NDIwZmZhNzUyNmZlMzA0OWM0MzgwMGMzNzdiZGQyZDAwMDNkNmNhMDE0ZWUxYWY3NDZiYjgyMjA0OTU2MWY0N2Q2OTAyNDMwMDNjMzhiNzJiMWQ4MjVmODc1MDFkYTZkNTEyZGQ5NjlkMjBlMTI=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:

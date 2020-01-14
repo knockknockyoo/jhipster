@@ -8,4 +8,4 @@ import { RouterModule } from '@angular/router';
     ])
   ]
 })
-export class JhipsterSampleEntityModule {}
+export class AppEntityModule {}

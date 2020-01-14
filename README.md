@@ -1,4 +1,4 @@
-# jhipster_sample
+# app
 
 This application was generated using JHipster 6.6.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.6.0](https://www.jhipster.tech/documentation-archive/v6.6.0).
 
@@ -91,7 +91,7 @@ will generate few files:
 
 ### Packaging as jar
 
-To build the final jar and optimize the jhipster_sample application for production, run:
+To build the final jar and optimize the app application for production, run:
 
     ./gradlew -Pprod clean bootJar
 

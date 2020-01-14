@@ -28,7 +28,7 @@ plugins {
     //jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
 }
 
-group = "com.gochemjakets.sample"
+group = "com.gochemjackets.app"
 version = "0.0.1-SNAPSHOT"
 
 description = ""
@@ -87,7 +87,7 @@ eclipse {
 defaultTasks "bootRun"
 
 springBoot {
-    mainClassName = "com.gochemjakets.sample.JhipsterSampleApp"
+    mainClassName = "com.gochemjackets.app.AppApp"
 }
 
 test {
@@ -139,22 +139,22 @@ liquibase {
     activities {
         main {
             driver "com.mysql.cj.jdbc.Driver"
-            url "jdbc:mysql://localhost:3306/jhipster_sample"
+            url "jdbc:mysql://localhost:3306/app"
             username "root"
             password ""
             changeLogFile "src/main/resources/config/liquibase/master.xml"
-            defaultSchemaName "jhipster_sample"
+            defaultSchemaName "app"
             logLevel "debug"
             classpath "src/main/resources/"
         }
         diffLog {
             driver "com.mysql.cj.jdbc.Driver"
-            url "jdbc:mysql://localhost:3306/jhipster_sample"
+            url "jdbc:mysql://localhost:3306/app"
             username "root"
             password ""
             changeLogFile project.ext.diffChangelogFile
-            referenceUrl "hibernate:spring:com.gochemjakets.sample.domain?dialect=org.hibernate.dialect.MySQL8Dialect&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
-            defaultSchemaName "jhipster_sample"
+            referenceUrl "hibernate:spring:com.gochemjackets.app.domain?dialect=org.hibernate.dialect.MySQL8Dialect&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
+            defaultSchemaName "app"
             logLevel "debug"
             classpath "$buildDir/classes/java/main"
         }
@@ -227,14 +227,6 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-aop"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
-    implementation "org.springframework.boot:spring-boot-starter-data-elasticsearch"
-    // Spring Data Jest dependencies for Elasticsearch
-    implementation ("com.github.vanroy:spring-boot-starter-data-jest") {
-        exclude module: "commons-logging"
-    }
-    // log4j2-mock needed to create embedded elasticsearch instance with SLF4J
-    runtimeOnly "de.dentrassi.elasticsearch:log4j2-mock:${log4j2_mock_version}"
-    // end of Spring Data Jest dependencies
     implementation "org.springframework.boot:spring-boot-starter-security"
     implementation ("org.springframework.boot:spring-boot-starter-web") {
         exclude module: "spring-boot-starter-tomcat"

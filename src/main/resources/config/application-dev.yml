@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: DEBUG
     io.github.jhipster: DEBUG
-    com.gochemjakets.sample: DEBUG
+    com.gochemjackets.app: DEBUG
 
 eureka:
   instance:
@@ -26,11 +26,6 @@ eureka:
     enabled: false # By default, the JHipster Registry is not used in the "dev" profile
     service-url:
       defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
-
-management:
-  health:
-    elasticsearch:
-      enabled: false
 
 spring:
   profiles:
@@ -50,7 +45,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/jhipster_sample?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/app?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
     password:
     hikari:
@@ -71,11 +66,6 @@ spring:
       hibernate.cache.use_second_level_cache: false
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: false
-  data:
-    elasticsearch:
-      properties:
-        path:
-          home: build/elasticsearch
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
@@ -124,7 +114,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: MjIwMWZlNjI4ZGY4NjA5ZmEyYzg5MzIyMzE0NjgyYWJhNDRmM2ZiNWI3YzkxYWJiYWQ1MDJiZTYzNzAzYWU1MTEwM2I5NTNmY2M3ZWU4NTgzMzc5MzVkMzZlMDcyYjQ0ZDFkNzM5ZWMyYjVhZGZhYTc0OTE1MDAyMzM3NWYwMjQ=
+        base64-secret: ZmE0OWEwY2FlMzZmYjYyZDQ0NDIwZmZhNzUyNmZlMzA0OWM0MzgwMGMzNzdiZGQyZDAwMDNkNmNhMDE0ZWUxYWY3NDZiYjgyMjA0OTU2MWY0N2Q2OTAyNDMwMDNjMzhiNzJiMWQ4MjVmODc1MDFkYTZkNTEyZGQ5NjlkMjBlMTI=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

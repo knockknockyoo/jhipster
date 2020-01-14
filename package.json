@@ -1,7 +1,7 @@
 {
-  "name": "jhipster-sample",
+  "name": "app",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for jhipster_sample",
+  "description": "Description for app",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

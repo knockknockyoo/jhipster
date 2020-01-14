@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { JhipsterSampleSharedLibsModule } from './shared-libs.module';
+import { AppSharedLibsModule } from './shared-libs.module';
 import { AlertComponent } from './alert/alert.component';
 import { AlertErrorComponent } from './alert/alert-error.component';
 import { LoginModalComponent } from './login/login.component';
 import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
 
 @NgModule({
-  imports: [JhipsterSampleSharedLibsModule],
+  imports: [AppSharedLibsModule],
   declarations: [AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
   entryComponents: [LoginModalComponent],
-  exports: [JhipsterSampleSharedLibsModule, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective]
+  exports: [AppSharedLibsModule, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective]
 })
-export class JhipsterSampleSharedModule {}
+export class AppSharedModule {}
